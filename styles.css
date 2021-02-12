@@ -3,23 +3,24 @@
   font-size: 22px;
 }
 
+.weekly-planner {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
 .container {
   width: 90%;
   height: 100vh;
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .planner-title {
   text-align: center;
   margin: 2rem auto;
-}
-
-.add-entry-button {
-  width: 100%;
-  display: flex;
-  /* justify-content: center; */
-  /* margin: 3rem auto; */
-  align-self: center;
 }

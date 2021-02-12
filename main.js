@@ -1,21 +1,19 @@
 var $addEntryButton = document.querySelector('.add');
 var $modalBackground = document.querySelector('.modal-background');
 
+var $form = document.querySelector('.entry-form');
+console.log('$form: ', $form);
+var $daySelect = document.querySelector('.day-of-week');
+
 $addEntryButton.addEventListener('click', function (event) {
   $modalBackground.className = 'modal-background';
 });
 
-var $submitButton = document.querySelector('#submit');
-
-$submitButton.addEventListener('click', function (event) {
-  $modalBackground.className = 'modal-background hidden';
-})
-
-var $form = document.querySelectorAll('.entry-form');
-
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
   var taskObject = {
-
+    day: $daySelect.value
   };
+  console.log('taskObject.day:', taskObject.day);
+  $modalBackground.className = 'modal-background hidden';
 });

@@ -4,13 +4,13 @@ var data = {
   nextEntryId: 1
 };
 
-// var previousDataJSON = localStorage.getItem('daily-planner-local-storage');
+var previousDataJSON = localStorage.getItem('daily-planner-local-storage');
 
-// if (previousDataJSON !== null) {
-//   data = JSON.parse(previousDataJSON);
-// }
+if (previousDataJSON !== null) {
+  data = JSON.parse(previousDataJSON);
+}
 
-// window.addEventListener('beforeunload', function (event) {
-//   var parseDataJSON = JSON.stringify(data);
-//   localStorage.setItem('daily-planner-local-storage', parseDataJSON);
-// });
+window.addEventListener('beforeunload', function (event) {
+  var parseDataJSON = JSON.stringify(data);
+  localStorage.setItem('daily-planner-local-storage', parseDataJSON);
+});

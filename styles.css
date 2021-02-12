@@ -88,8 +88,8 @@ h1 {
 
 .container {
   width: 90%;
-  height: 90vh;
-  margin: auto;
+  /* height: 90vh; */
+  margin: 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,14 @@ h1 {
   padding: 0.25rem 0.5rem;
 }
 
+.day-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .day-button {
   width: 120px;
   height: 120px;
+  margin: 10px auto;
 }

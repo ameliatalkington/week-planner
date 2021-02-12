@@ -1,4 +1,5 @@
 var data = {
+  dayOfTheWeek: '',
   entries: [],
   editing: null,
   nextEntryId: 1
@@ -12,5 +13,5 @@ if (previousDataJSON !== null) {
 
 window.addEventListener('beforeunload', function (event) {
   var parseDataJSON = JSON.stringify(data);
-  localStorage.setItem('daily-planner-local-storage', parseDataJSON);
+  localStorage.removeItem('daily-planner-local-storage', parseDataJSON);
 });

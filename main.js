@@ -2,6 +2,7 @@ var $addEntryButton = document.querySelector('.add');
 var $modalBackground = document.querySelector('.modal-background');
 var $weekButtons = document.querySelector('.day-button-container');
 var $dayOfWeekButton = document.querySelectorAll('.day-button');
+var $dayTitle = document.querySelector('.day-title');
 
 var $form = document.querySelector('.entry-form');
 var $daySelect = document.querySelector('.day-of-week');
@@ -28,6 +29,9 @@ $form.addEventListener('submit', function (event) {
 $weekButtons.addEventListener('click', function(event) {
   for(var i = 0; i < $dayOfWeekButton.length; i++) {
     if (event.target.value === $dayOfWeekButton[i].value) {
+      $dayTitle.textContent = $dayOfWeekButton[i].value;
+      console.log('event.target.value:', event.target.value);
+      console.log('$dayOfWeekButton[i].value', $dayOfWeekButton[i].value);
       addDataToTable();
     }
   }

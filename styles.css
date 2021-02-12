@@ -1,6 +1,35 @@
 * {
   box-sizing: border-box;
   font-size: 22px;
+  font-family: sans-serif;
+}
+
+button {
+  border: none;
+  background-color: olivedrab;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: gray;
+}
+
+.modal {
+  width: 40%;
+  height: 30%;
+  background-color: white;
 }
 
 .weekly-planner {
@@ -13,7 +42,7 @@
 
 .container {
   width: 90%;
-  height: 100vh;
+  height: 90vh;
   margin: auto;
   display: flex;
   justify-content: center;

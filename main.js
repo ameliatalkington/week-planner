@@ -8,7 +8,7 @@ var $form = document.querySelector('.entry-form');
 var $daySelect = document.querySelector('.day-of-week');
 var $timeSelect = document.querySelector('.time');
 var $textArea = document.querySelector('textarea');
-var $tbody = document.querySelectorAll('tbody');
+var $tbody = document.querySelector('tbody');
 
 $addEntryButton.addEventListener('click', function (event) {
   $modalBackground.className = 'modal-background';
@@ -58,7 +58,7 @@ function createTableDOM() {
   var tdDescription = document.createElement('td');
   tdDescription.setAttribute('class', 'entry-description');
   trElement.appendChild(tdDescription);
-
+  $tbody.appendChild(trElement);
   // tdTime.textContent = data.
   // tdDescription.textContent = data.
   return trElement;

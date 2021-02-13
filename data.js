@@ -13,5 +13,5 @@ if (previousDataJSON !== null) {
 
 window.addEventListener('beforeunload', function (event) {
   var parseDataJSON = JSON.stringify(data);
-  localStorage.removeItem('daily-planner-local-storage', parseDataJSON);
+  localStorage.setItem('daily-planner-local-storage', parseDataJSON);
 });

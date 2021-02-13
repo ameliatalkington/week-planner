@@ -8,6 +8,7 @@ var $form = document.querySelector('.entry-form');
 var $daySelect = document.querySelector('.day-of-week');
 var $timeSelect = document.querySelector('.time');
 var $textArea = document.querySelector('textarea');
+var $tbody = document.querySelector('tbody');
 
 $addEntryButton.addEventListener('click', function (event) {
   $modalBackground.className = 'modal-background';
@@ -30,12 +31,13 @@ $weekButtons.addEventListener('click', function (event) {
   for (var i = 0; i < $dayOfWeekButton.length; i++) {
     if (event.target.value === $dayOfWeekButton[i].value) {
       $dayTitle.textContent = $dayOfWeekButton[i].value;
-      addDataToTable();
+      addDataToTable($dayOfWeekButton[i].value);
     }
   }
 });
 
 function addDataToTable(dayValue) {
+  var trNodes = $tbody.childNodes;
   var $timeObj = {
     time: []
   };
@@ -45,10 +47,13 @@ function addDataToTable(dayValue) {
   for (var j = 0; j < data.entries.length; j++) {
     if (data.entries[j].day === dayValue) {
       $timeObj.time.push(data.entries[j].time);
-      $notesObj.description.push(data.entires[j].description);
+      $notesObj.description.push(data.entries[j].description);
     }
-  for () {
+  }
+
+  for (var m = 0; m < $timeObj.time.length; m++) {
 
   }
-  }
+  console.log('$timeObj.time', $timeObj.time);
+  console.log('$notesObj.description', $notesObj.description);
 }

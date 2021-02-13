@@ -37,30 +37,31 @@ $weekButtons.addEventListener('click', function (event) {
 });
 
 function addDataToTable(dayValue) {
-  var $timeArray = [];
-  var $descriptionArray = [];
   for (var j = 0; j < data.entries.length; j++) {
-    $tbody.appendChild(createTableDOM());
+    createTableDOM();
+    var $entryTime = document.querySelector('.entry-time');
+    var $entryDescription = document.querySelector('.entry-description');
     if (data.entries[j].day === dayValue) {
-      $timeArray.push(data.entries[j].time);
-      $descriptionArray.description.push(data.entries[j].description);
+      $entryTime.textContent = data.entries[j].time;
+      $entryDescription.textContent = data.entries[j].description;
     }
   }
-
 }
 
 function createTableDOM() {
-  var trElement1 = document.createElement('tr');
+  var trElement = document.createElement('tr');
 
   var tdTime = document.createElement('td');
   tdTime.setAttribute('class', 'entry-time');
-  trElement1.appendChild(tdTime);
+  trElement.appendChild(tdTime);
 
   var tdDescription = document.createElement('td');
   tdDescription.setAttribute('class', 'entry-description');
-  trElement1.appendChild(tdDescription);
+  trElement.appendChild(tdDescription);
 
-  return trElement1;
+  // tdTime.textContent = data.
+  // tdDescription.textContent = data.
+  return trElement;
 }
 
 // for (var m = 0; m < $timeObj.time.length; m++) {

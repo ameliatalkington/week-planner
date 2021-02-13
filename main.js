@@ -40,18 +40,27 @@ function addDataToTable(dayValue) {
   var $timeArray = [];
   var $descriptionArray = [];
   for (var j = 0; j < data.entries.length; j++) {
+    $tbody.appendChild(createTableDOM());
     if (data.entries[j].day === dayValue) {
       $timeArray.push(data.entries[j].time);
       $descriptionArray.description.push(data.entries[j].description);
     }
   }
 
-  console.log('$timeObj.time', $timeObj.time);
-  console.log('$notesObj.description', $notesObj.description);
 }
 
 function createTableDOM() {
+  var trElement1 = document.createElement('tr');
 
+  var tdTime = document.createElement('td');
+  tdTime.setAttribute('class', 'entry-time');
+  trElement1.appendChild(tdTime);
+
+  var tdDescription = document.createElement('td');
+  tdDescription.setAttribute('class', 'entry-description');
+  trElement1.appendChild(tdDescription);
+
+  return trElement1;
 }
 
 // for (var m = 0; m < $timeObj.time.length; m++) {

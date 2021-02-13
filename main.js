@@ -8,7 +8,7 @@ var $form = document.querySelector('.entry-form');
 var $daySelect = document.querySelector('.day-of-week');
 var $timeSelect = document.querySelector('.time');
 var $textArea = document.querySelector('textarea');
-var $tbody = document.querySelector('tbody');
+var $tbody = document.querySelectorAll('tbody');
 
 $addEntryButton.addEventListener('click', function (event) {
   $modalBackground.className = 'modal-background';
@@ -37,23 +37,32 @@ $weekButtons.addEventListener('click', function (event) {
 });
 
 function addDataToTable(dayValue) {
-  var trNodes = $tbody.childNodes;
-  var $timeObj = {
-    time: []
-  };
-  var $notesObj = {
-    description: []
-  };
+  var $timeArray = [];
+  var $descriptionArray = [];
   for (var j = 0; j < data.entries.length; j++) {
     if (data.entries[j].day === dayValue) {
-      $timeObj.time.push(data.entries[j].time);
-      $notesObj.description.push(data.entries[j].description);
+      $timeArray.push(data.entries[j].time);
+      $descriptionArray.description.push(data.entries[j].description);
     }
   }
 
-  for (var m = 0; m < $timeObj.time.length; m++) {
-
-  }
   console.log('$timeObj.time', $timeObj.time);
   console.log('$notesObj.description', $notesObj.description);
 }
+
+function createTableDOM() {
+
+}
+
+// for (var m = 0; m < $timeObj.time.length; m++) {
+//   for (var k = 0; k < $tdElements.length; k++) {
+//     if (k === 0) {
+//       $tdElements[k].textContent = $timeObj.time[m];
+//     }
+//     else if (k % 2 === 0) {
+
+//     } else {
+//       $tdElements[k].textContent = $notesObj
+//     }
+//   }
+// }

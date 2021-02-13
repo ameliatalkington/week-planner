@@ -8,7 +8,8 @@
   display: none !important;
 }
 
-h2 {
+h2,
+.day-title {
   font-size: 18px;
 }
 

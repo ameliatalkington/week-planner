@@ -26,17 +26,29 @@ $form.addEventListener('submit', function (event) {
   $modalBackground.className = 'modal-background hidden';
 });
 
-$weekButtons.addEventListener('click', function(event) {
-  for(var i = 0; i < $dayOfWeekButton.length; i++) {
+$weekButtons.addEventListener('click', function (event) {
+  for (var i = 0; i < $dayOfWeekButton.length; i++) {
     if (event.target.value === $dayOfWeekButton[i].value) {
       $dayTitle.textContent = $dayOfWeekButton[i].value;
-      console.log('event.target.value:', event.target.value);
-      console.log('$dayOfWeekButton[i].value', $dayOfWeekButton[i].value);
       addDataToTable();
     }
   }
 });
 
-function addDataToTable() {
+function addDataToTable(dayValue) {
+  var $timeObj = {
+    time: []
+  };
+  var $notesObj = {
+    description: []
+  };
+  for (var j = 0; j < data.entries.length; j++) {
+    if (data.entries[j].day === dayValue) {
+      $timeObj.time.push(data.entries[j].time);
+      $notesObj.description.push(data.entires[j].description);
+    }
+  for () {
 
+  }
+  }
 }
